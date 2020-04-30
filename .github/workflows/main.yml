@@ -49,21 +49,15 @@ jobs:
         run: |
           value=`cat homework/math-homework.txt`
           echo The result is $value
-          
-  job_4:
-      name: return file to repo
-      needs: job_3
-      runs-on: macOS-latest
-      steps:
-        - name: check existance of file
-          run: ls
-        - name: upload artifact to repo
-          uses: actions/upload-artifact@v2
-          with:
-            name: my-artifact
-            path: homework/math-homework.txt
-        - name: print confirmation status
-          shell: bash
-          run: |
-            echo Sucess!
+      - name: check existance of file
+        run: ls
+      - name: upload artifact to repo
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: homework/math-homework.txt
+      - name: print confirmation status
+        shell: bash
+        run: |
+          echo Sucess!
 
