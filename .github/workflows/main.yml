@@ -55,6 +55,8 @@ jobs:
       needs: job_3
       runs-on: macOS-latest
       steps:
+        - name: check existance of file
+          run: ls
         - name: upload artifact to repo
           uses: actions/upload-artifact@v2
           with:
