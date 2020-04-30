@@ -59,7 +59,7 @@ jobs:
           uses: actions/upload-artifact@v2
           with:
             name: my-artifact
-            path: path/to/artifact/math-homework.txt
+            path: math-homework.txt
         - name: print confirmation status
           shell: bash
           run: |
