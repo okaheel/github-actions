@@ -64,4 +64,14 @@ jobs:
         shell: bash
         run: |
           echo Sucess!
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "added files" || exit 0
+      - name: Push Diagrams
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
