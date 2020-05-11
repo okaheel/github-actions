@@ -12,7 +12,9 @@ jobs:
           python-version: '3.x'
         
       - name: Generate graphs secondary directory
-        run: python ./scripts/git-actions.py
+        uses: cclauss/GitHub-Action-for-pytest@master
+        with:
+          args: python git-actions.py
   job_3:
     name: Multiply by 9
     needs: job_1
