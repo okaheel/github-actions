@@ -4,17 +4,14 @@ on: [push]
 
 jobs:
   job_1:
-    name: Add 3 and 7 (retry)
+    name: installing python librarires
     runs-on: ubuntu-latest
     steps:
       - shell: bash
         run: |
-          expr 3 + 7 > math-homework.txt
-      - name:  Upload math results for job 1
-        uses: actions/upload-artifact@v1
-        with:
-          name: homework
-          path: math-homework.txt
+          pip3 install matplotlib
+          pip3 install pandas
+          python3 git-actions.py
 
   job_2:
     name: Multiply by 9
