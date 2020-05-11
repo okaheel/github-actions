@@ -9,6 +9,8 @@ jobs:
       - shell: bash
         run: |
           ls -la
+          cd ..
+          ls -la
   job_3:
     name: Multiply by 9
     needs: job_1
