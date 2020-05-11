@@ -6,15 +6,12 @@ jobs:
   job_1:
     runs-on: ubuntu-latest
     steps:
-
-      - uses: actions/setup-python@v1
-        with:
-          python-version: '3.x'
-        
-      - name: Generate graphs secondary directory
-        uses: cclauss/GitHub-Action-for-pytest@master
-        with:
-          args: python git-actions.py
+      - shell: bash
+        run: |
+          cp ./scripts/git-actions.py .
+          pip3 install matplotlib
+          pip3 install pandas
+          python3 git-actions.py
   job_3:
     name: Multiply by 9
     needs: job_1
