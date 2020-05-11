@@ -1,5 +1,5 @@
-text_file = open("output.txt", "w")
+import matplotlib.pyplot as plt
+import pandas as pd
 
-text_file.write("test1")
-
-text_file.close()
+unrate = pd.read_csv('unrate.csv')
+print(unrate)
