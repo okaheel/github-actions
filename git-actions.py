@@ -3,6 +3,10 @@ import pandas as pd
 import sys 
 
 unrate = pd.read_csv('unrate.csv')
-unrate1 = unrate
 
-print(unrate)
+#pick first twelve rows
+first_twelve = unrate[0:12]
+#graph date on x and value on y
+figure = plt.plot(first_twelve['DATE'], first_twelve['VALUE'])
+figure.savefig('plot.png')
+plt.close(figure)
